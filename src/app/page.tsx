@@ -1,12 +1,28 @@
 'use client';
+import { useState } from 'react';
 
+import IframeComponent from './components/iframe';
+import StartMenu from './components/start-menu';
 
+const Home: React.FC = () => {
+    const [iframeSrc, setIframeSrc] = useState<string | null>(null);
 
-export default function Home() {
+    const handleImageClick = (src: string) => {
+        setIframeSrc(src);
+    };
+
+    const closeIframe = () => {
+        setIframeSrc(null);
+    };
 
     return (
-        <div className="flex h-screen justify-center items-center bg-red-500">
-            <h1 className="text-4xl font-bold text-blue-500">PWA APP</h1>
+        <div className="bg-orange-400 min-h-screen">
+            {iframeSrc
+                ? <IframeComponent url={iframeSrc} onClose={closeIframe}/>
+                : <StartMenu handleImageClick={handleImageClick}/>
+            }
         </div>
     );
-}
+};
+
+export default Home;
