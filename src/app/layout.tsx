@@ -3,18 +3,24 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+    src: "/fonts/GeistVF.woff",
+    variable: "--font-geist-sans",
+    weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+    src: "/fonts/GeistMonoVF.woff",
+    variable: "--font-geist-mono",
+    weight: "100 900",
+});
+const herculanum = localFont({
+    src: "/fonts/Herculanum.ttf",
+    variable: "--font-herculanum",
+    weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
-  title: "Interactive Learning",
+  title: "PixieAR",
   description: "Interactive Learning",
 };
 
@@ -24,11 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
+      <html lang="en" className={herculanum.variable}>
       <head>
-          <title>Interactive Learning</title>
           <link rel="manifest" href="/manifest.json"/>
-
           <link rel="icon" href="/favicon.ico"/>
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -36,7 +40,7 @@ export default function RootLayout({
           <link rel="manifest" href="/site.webmanifest"/>
       </head>
       <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
       {children}
       </body>

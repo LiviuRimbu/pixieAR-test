@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     };
 
     return (
-        <div className="bg-orange-400 min-h-screen">
+        <div className="bg-custom-gradient min-h-screen">
             {iframeSrc
                 ? <IframeComponent url={iframeSrc} onClose={closeIframe}/>
                 : <StartMenu handleImageClick={handleImageClick}/>

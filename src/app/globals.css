@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --violet: #7a0965;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +24,16 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .bg-custom-gradient {
+    background: linear-gradient(180deg, #84e5de, #94ccfd);
+  }
+  .gradient-text {
+    background: linear-gradient(180deg, #15bbe4, #2d73a7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -81,6 +92,16 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
+
+@font-face {
+  font-family: 'Herculanum';
+  src: url('fonts/Herculanum.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 
 @layer base {
   * {

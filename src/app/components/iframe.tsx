@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './ui/button';
 
 interface IframeComponentProps {
     url: string;
@@ -17,12 +18,12 @@ const IframeComponent: React.FC<IframeComponentProps> = ({ url, onClose }) => {
                 allow="camera;gyroscope;accelerometer;magnetometer;xr-spatial-tracking;microphone"
                 title="Project Iframe"
             ></iframe>
-            <button
+            <Button
                 onClick={onClose}
-                className="absolute top-4 right-4 bg-white text-black px-4 py-2 rounded-md"
+                className="absolute top-4 right-4 bg-white  bg-gradient-to-r from-purple-400 to-cyan-400 text-white font-bold py-2 px-8 rounded-full hover:scale-105 transition-transform border border-white"
             >
                 Close
-            </button>
+            </Button>
         </div>
     );
 };
