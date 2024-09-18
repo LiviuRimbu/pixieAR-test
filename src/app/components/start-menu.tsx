@@ -36,15 +36,12 @@ const StartMenu: React.FC<StartMenuProps> = ({handleImageClick}) => {
                     </div>
                 </div>
             </div>
-            <div className=" w-full h-[50vh] fixed bottom-0 left-0 block sm:hidden">
+            <div className=" w-full h-[40vh] fixed bottom-0 left-0 block sm:hidden">
                 <Image
                     src="/images/leafs.png"
                     alt="background img"
-                    // layout="fill"
-                     width={4000}
-                     height={40}
-                    // objectFit="cover"
-                    // priority={true}
+                    width={4000}
+                    height={40}
                     className=" w-full relative z-10 -top-[4rem]"
                 />
                 <Image
