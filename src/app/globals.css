@@ -35,6 +35,9 @@ body {
     background-clip: text;
     color: transparent;
   }
+  .btn-gradient {
+    @apply bg-gradient-to-r from-purple-400 to-cyan-400;
+  }
 }
 
 @layer base {

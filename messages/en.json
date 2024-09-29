@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "Welcome",
+    "instruction": "Choose a book to scan"
+  },
+  "Iframe" : {
+
+    "selected-image": "Scan this book:",
+    "button": "Back"
+  }
+}

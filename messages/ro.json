@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "Bun Venit",
+    "instruction": "Alegeți coperta pe care să o scanați"
+  },
+  "Iframe" : {
+
+    "selected-image": "Scanați coperta:",
+    "button": "Înapoi"
+  }
+}

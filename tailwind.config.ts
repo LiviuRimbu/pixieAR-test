@@ -11,12 +11,12 @@ module.exports = {
         extend: {
             screens: {
                 // Custom screen sizes
-                xs: '480px',   // Custom breakpoint for extra small devices
-                sm: '640px',   // Small screens, typically mobile devices
-                md: '768px',   // Medium screens, typically tablets
-                lg: '1024px',  // Large screens, typically laptops
-                xl: '1280px',  // Extra large screens, typically desktops
-                '2xl': '1536px', // 2X large screens
+                xs: '480px',
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+                xxl: '1536px',
             },
             fontFamily: {
                 herculanum: ['var(--font-herculanum)', 'sans-serif'],
@@ -30,6 +30,7 @@ module.exports = {
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 violet: 'var(--violet)',
+                btnGradient: 'var(--btn-gradient)',
                 card: {
                     DEFAULT: 'hsl(var(--card))',
                     foreground: 'hsl(var(--card-foreground))'
