@@ -11,7 +11,7 @@ interface Book {
 
 const books: Book[] = [
     {src: 'https://mywebar.com/p/Project_0_qu59hfweju1802', imageSrc: '/images/english.jpg'},
-    {src: 'https://mywebar.com/p/Project_4_6k8la19ohc7569', imageSrc: '/images/grammar.jpg'},
+    {src: 'https://mywebar.com/p/Project_4_6k8la19ohc75691675', imageSrc: '/images/grammar.jpg'},
     {src: 'https://mywebar.com/p/Project_7_87chzb90ir33869729', imageSrc: '/images/france.png'},
 ]
 const BooksList: React.FC<BooksListProps> = ({handleImageClick}) => {
