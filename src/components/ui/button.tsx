@@ -19,6 +19,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "bg-transparent hover:scale-120 hover:text-red-900 active:scale-120 transition-transform duration-150 ease-in-out ",
         link: "text-primary underline-offset-4 hover:underline",
+          webar: "text-[16px] btn-gradient text-white font-bold py-2 px-8 rounded-full hover:scale-105 transition-transform border border-white",
       },
       size: {
         default: "h-9 px-4 py-2",

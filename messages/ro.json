@@ -1,11 +1,23 @@
 {
-  "HomePage": {
-    "title": "Bun Venit",
-    "instruction": "Alegeți coperta pe care să o scanați"
+  "header": {
+    "title": "Bun Venit"
+     },
+  "books-covers-ar": {
+    "instruction": "Alegeți cartea pe care să o scanați"
   },
-  "Iframe" : {
-
+  "iframe" : {
     "selected-image": "Scanați coperta:",
+    "button": "Înapoi"
+  },
+  "book-detail" : {
+    "selected-image": "Ati ales cartea:",
+    "button": "Înapoi",
+    "btn-scan-cover": "Scan coperta",
+    "btn-scan-content": "Scan continut"
+  },
+  "qr-scanner" : {
+    "selected-image": "Scan qr code",
     "button": "Înapoi"
   }
 }
+

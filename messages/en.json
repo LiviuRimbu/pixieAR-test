@@ -1,11 +1,22 @@
 {
-  "HomePage": {
-    "title": "Welcome",
-    "instruction": "Choose a book to scan"
+  "header": {
+    "title": "Welcome"
   },
-  "Iframe" : {
-
+  "books-covers-ar": {
+    "instruction": "Choose the book scan"
+  },
+  "iframe" : {
     "selected-image": "Scan this book:",
+    "button": "Back"
+  },
+  "book-detail" : {
+    "selected-image": "Selected this book:",
+    "button": "Back",
+    "btn-scan-cover": "Scan cover",
+    "btn-scan-content": "Scan content"
+  },
+  "qr-scanner" : {
+    "selected-image": "Scan qr code:",
     "button": "Back"
   }
 }

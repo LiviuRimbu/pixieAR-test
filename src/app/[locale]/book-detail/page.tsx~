@@ -1,0 +1,28 @@
+'use client'
+// import React, { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+
+interface Book {
+	id: number;
+	src: string;
+	imageSrc: string;
+}
+const books: Book[] = [
+	{id: 1, src: 'https://mywebar.com/p/Project_0_qu59hfweju1802', imageSrc: '/images/english.jpg' },
+	{id: 2, src: 'https://mywebar.com/p/Project_4_6k8la19ohc75691675', imageSrc: '/images/grammar.jpg' },
+	{id: 3, src: 'https://mywebar.com/p/Project_7_87chzb90ir33869729', imageSrc: '/images/france.png' },
+];
+
+const BookDetail: React.FC = () => {
+	const searchParams = useSearchParams();
+	const bookId = searchParams.get('id');
+
+	console.log(bookId);
+	return (
+		<div className="flex flex-col items-center justify-center min-h-screen">
+
+		</div>
+	);
+};
+
+export default BookDetail;
