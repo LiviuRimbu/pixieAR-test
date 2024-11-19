@@ -37,8 +37,8 @@ const QRScannerComponent: React.FC = () => {
 
 	return (
 		<div className="relative h-screen w-screen flex justify-center items-center bg-black">
-			{/* Fullscreen Video */}
-			<div className="-scale-x-100 w-screen h-screen overflow-hidden">
+
+			<div className="w-screen h-screen overflow-hidden">
 				<video
 					ref={videoRef}
 					className="w-full h-full object-cover"
