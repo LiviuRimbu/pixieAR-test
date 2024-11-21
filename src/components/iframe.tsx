@@ -9,6 +9,7 @@ import {useIdAndLocales} from "@/lib/useIdAndLocales"
 const IframeComponent: React.FC = () => {
     const t = useTranslations('iframe');
     const {id} = useIdAndLocales();
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-custom-gradient">
             <iframe
@@ -21,8 +22,7 @@ const IframeComponent: React.FC = () => {
                 title="Project Iframe"
             >
             </iframe>
-
-            <InfoHeader btnText = {t('button')} imageSrc={books[Number(id)].imageSrc} imgText={t('selected-image')}  />
+            <InfoHeader btnText={t('button')} imageSrc={books[Number(id)].imageSrc} imgText={t('selected-image')}/>
         </div>
     );
 };
