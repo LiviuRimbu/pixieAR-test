@@ -17,10 +17,10 @@ const BookDetail: React.FC = () => {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen"
 			 style={{
-				 backgroundImage: `linear-gradient(rgba(132, 229, 222, 0.8), rgba(148, 204, 253, 0.9)), url(${books[Number(id)].imageSrc})`,
-				 backgroundSize: '120%',
+				 backgroundImage: `linear-gradient(rgba(132, 229, 222, 0.8), rgba(148, 204, 253, 0.9)), url('images/ardino.png')`,
+				 backgroundSize: '210%',
 				 backgroundRepeat: 'no-repeat',
-				 backgroundPosition: 'center 80%',
+				 backgroundPosition: 'left 60%',
 			 }}
 		>
 			<InfoHeader btnText = {t('button')} imageSrc={books[Number(id)].imageSrc} imgText={t('selected-image')} />
