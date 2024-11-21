@@ -15,16 +15,22 @@ const BookDetail: React.FC = () => {
 	const { id, currentLocale} = useIdAndLocales();
 
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen">
+		<div className="flex flex-col items-center justify-center min-h-screen"
+			 style={{
+				 backgroundImage: `linear-gradient(rgba(132, 229, 222, 0.4), rgba(148, 204, 253, 0.4)), url(${books[Number(id)].imageSrc})`,
+				 backgroundSize: 'cover',
+				 backgroundPosition: 'center',
+			 }}
+		>
 			<InfoHeader btnText = {t('button')} imageSrc={books[Number(id)].imageSrc} imgText={t('selected-image')} />
 			<Link href={`/${currentLocale}/book-detail/id=${id}/ar`}>
 				<Button
 					variant="webar"
-					className="w-[228px] h-[65px] mb-9 text-[23px]"
-				>
+					className="w-[228px] h-[65px] mb-9 text-[23px] "
+									>
 					<Image
 						src={books[Number(id)].imageSrc}
-						className=" rounded-full mr-[15px] "
+						className=" rounded-full mr-[15px] aspect-square  "
 						alt="cover book"
 						width={40}
 						height={40}
@@ -40,7 +46,7 @@ const BookDetail: React.FC = () => {
 				>
 					<Image
 						src={"/images/qr-code.png"}
-						className="rounded-full mr-[10px] brightness-0 invert "
+						className="rounded-full mr-[10px] brightness-0 invert aspect-square  "
 						alt="cover book"
 						width={40}
 						height={40}
