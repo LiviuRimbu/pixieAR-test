@@ -8,7 +8,7 @@ import {books} from '@/data/books-list';
 import {Button} from '@/components/ui/button';
 import {useIdAndLocales} from "@/lib/useIdAndLocales"
 import Image from "next/image"
-import booksList from "@/components/books-list"
+
 
 const BookDetail: React.FC = () => {
 	const t = useTranslations('book-detail');
