@@ -13,7 +13,8 @@
     "selected-image": "Ati ales cartea:",
     "button": "Înapoi",
     "btn-scan-cover": "Scan coperta",
-    "btn-scan-content": "Scan continut"
+    "btn-scan-content": "Scan continut",
+    "instruction": "Instructiuni serioase si pretioase"
   },
   "qr-scanner" : {
     "selected-image": "Scan qr code",

@@ -3,7 +3,7 @@
     "title": "Welcome"
   },
   "books-covers-ar": {
-    "instruction": "Choose the book scan"
+    "instruction": "Choose a book to scan"
   },
   "iframe" : {
     "selected-image": "Scan this book:",
@@ -13,7 +13,8 @@
     "selected-image": "Selected this book:",
     "button": "Back",
     "btn-scan-cover": "Scan cover",
-    "btn-scan-content": "Scan content"
+    "btn-scan-content": "Scan content",
+    "instruction": "Instructions, very smart instructions"
   },
   "qr-scanner" : {
     "selected-image": "Scan qr code:",

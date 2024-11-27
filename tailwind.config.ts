@@ -18,6 +18,15 @@ module.exports = {
                 xl: '1280px',
                 xxl: '1536px',
             },
+            backgroundImage: {
+                'ardino-bg': "linear-gradient(rgba(132, 229, 222, 0.8), rgba(148, 204, 253, 0.9)), url('/images/ardino.png')",
+            },
+            backgroundSize: {
+                '210': '210%',
+            },
+            backgroundPosition: {
+                'left-60': 'left 60%',
+            },
             fontFamily: {
                 herculanum: ['var(--font-herculanum)', 'sans-serif'],
             },
