@@ -13,11 +13,15 @@
     "selected-image": "Selected this book:",
     "button": "Back",
     "btn-scan-cover": "Scan cover",
+    "btn-scan-cover-sec": "3D Animation",
     "btn-scan-content": "Scan content",
-    "instruction": "Instructions, very smart instructions"
+    "btn-scan-content-sec": "Audio-Video Content Playback"
   },
   "qr-scanner" : {
     "selected-image": "Scan qr code:",
     "button": "Back"
+  },
+  "camera-access-alert" : {
+    "alert": "Instructions, very smart instructions"
   }
 }

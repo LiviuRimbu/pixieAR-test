@@ -12,13 +12,17 @@
   "book-detail" : {
     "selected-image": "Ati ales cartea:",
     "button": "Înapoi",
-    "btn-scan-cover": "Scan coperta",
-    "btn-scan-content": "Scan continut",
-    "instruction": "Instructiuni serioase si pretioase"
-  },
+    "btn-scan-cover": "Scanează coperta",
+    "btn-scan-cover-sec": "Copertă animată 3D",
+    "btn-scan-content": "Scanează content",
+    "btn-scan-content-sec": "Redare conținut audio-video"
+      },
   "qr-scanner" : {
     "selected-image": "Scan qr code",
     "button": "Înapoi"
+  },
+  "camera-access-alert" : {
+    "instruction": "Instructiuni serioase si pretioase"
   }
 }
 

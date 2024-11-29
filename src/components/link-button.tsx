@@ -8,16 +8,17 @@ type LinkButtonProps = {
 	href: string;
 	imageSrc: string;
 	altText: string;
-	btnText: string;
+	btnTextMain: string;
+	btnTextSec: string;
 	className?: string;
 	imgClassName?: string
 
 };
-const LinkButton: FC<LinkButtonProps> = ({ href, imageSrc, altText, btnText, className, imgClassName  }) => {
+const LinkButton: FC<LinkButtonProps> = ({ href, imageSrc, altText, btnTextMain, btnTextSec, className, imgClassName  }) => {
 	return (
 		<div >
 			<Link href={href}>
-				<Button variant="webar" className={`w-[228px] h-[65px] text-[23px] ${className}`}>
+				<Button variant="webar" className={`w-[60vw] h-[80px] mb-[5rem] text-[23px] ${className}`}>
 					<Image
 						src={imageSrc}
 						className={`rounded-full mr-[10px] aspect-square ${imgClassName}`}
@@ -25,7 +26,10 @@ const LinkButton: FC<LinkButtonProps> = ({ href, imageSrc, altText, btnText, cla
 						width={40}
 						height={40}
 					/>
-					{btnText}
+					<div className=" flex flex-col">
+						<p className="">{btnTextMain} </p>
+						<p className="text-[12px]">{btnTextSec}</p>
+					</div>
 				</Button>
 			</Link>
 		</div>

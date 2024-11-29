@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 
 import QRScannerComponent from "@/components/qr-scanner";
@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import video from "@/data/video.json";
 import Modal from "@/components/modal";
 import IframeVideo from "@/components/iframe-video";
-import Image from "next/image"
+import Image from "next/image";
+import CheckCameraAccess from "@/components/camera-access-checking";
 
 interface VideoData {
 	[key: string]: {
@@ -24,14 +25,14 @@ const Home: React.FC = () => {
 	const [activeVideoId, setActiveVideoId] = useState<string | null>(null); // Store the ID of the active video
 	const [preloadedVideos, setPreloadedVideos] = useState<string[]>([]); // Store preloaded video IDs
 
+	const videoData: VideoData = video;
+
 	// Handle QR Code scanned data
 	const handleQRCodeScanned = (data: string) => {
 		setQrCodeData(data); // Set scanned QR code data
 		setIsScannerVisible(false); // Hide the scanner
 		searchByKey(data); // Search for the key in the JSON data
 	};
-
-	const videoData: VideoData = video;
 
 	const searchByKey = (key: string) => {
 		if (videoData[key]) {
@@ -41,32 +42,35 @@ const Home: React.FC = () => {
 		}
 	};
 
+	// Preload videos by creating hidden <video> elements
+	const preloadVideos = useCallback(
+		(videoIds: string[]) => {
+			videoIds.forEach((id) => {
+				if (!preloadedVideos.includes(id)) {
+					const videoElement = document.createElement("video");
+					videoElement.src = `https://player.vimeo.com/video/${id}`;
+					videoElement.preload = "auto";
+					videoElement.style.display = "none"; // Hide the video element
+					document.body.appendChild(videoElement);
+
+					// Remove the video element once it's preloaded
+					videoElement.oncanplaythrough = () => {
+						videoElement.remove();
+						setPreloadedVideos((prev) => [...prev, id]); // Mark as preloaded
+					};
+				}
+			});
+		},
+		[preloadedVideos] // Dependency array ensures this function is stable
+	);
+
 	// Preload videos when searchResult changes
 	useEffect(() => {
 		if (searchResult) {
 			const videoIds = Object.values(searchResult);
-			preloadVideos(videoIds);
+			preloadVideos(videoIds); // Safe to include preloadVideos here
 		}
-	}, [searchResult]);
-
-	// Preload videos by creating hidden <video> elements
-	const preloadVideos = (videoIds: string[]) => {
-		videoIds.forEach((id) => {
-			if (!preloadedVideos.includes(id)) {
-				const videoElement = document.createElement("video");
-				videoElement.src = `https://player.vimeo.com/video/${id}`;
-				videoElement.preload = "auto";
-				videoElement.style.display = "none"; // Hide the video element
-				document.body.appendChild(videoElement);
-
-				// Remove the video element once it's preloaded
-				videoElement.oncanplaythrough = () => {
-					videoElement.remove();
-					setPreloadedVideos((prev) => [...prev, id]); // Mark as preloaded
-				};
-			}
-		});
-	};
+	}, [searchResult, preloadVideos]); // Include preloadVideos as a dependency
 
 	return (
 		<div className="relative flex flex-col items-center justify-start  min-h-screen">
@@ -92,17 +96,16 @@ const Home: React.FC = () => {
 						Scan
 					</Button>
 					{searchResult ? (
-						<div className="mt-4">
+						<div className="mt-4 border-white border-2 p-[3rem] rounded-3xl">
 							{Object.keys(searchResult).map((key) => (
 								<div key={key}>
 									{/* Open Modal for This Video */}
-									<Button
-										className="mb-[1rem] text-[20px] w-[300px]"
-										variant="webar"
+									<button
+										className="mb-[1rem] text-[20px] w-[300px] text-violet border-white bg-[rgb(135,225,225)] border-2 rounded-full"
 										onClick={() => setActiveVideoId(searchResult[key])} // Set active video ID
 									>
 										{key.split(/ p\d+/)[0]}
-									</Button>
+									</button>
 
 									{/* Modal for This Video */}
 									<Modal
@@ -127,6 +130,7 @@ const Home: React.FC = () => {
 				imageSrc={"/images/qr-code.png"}
 				imgText={t("selected-image")}
 			/>
+			<CheckCameraAccess />
 		</div>
 	);
 };
